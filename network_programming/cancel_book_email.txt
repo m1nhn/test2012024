@@ -1,0 +1,11 @@
+Subject: Flight Booking Cancellation Confirmation
+
+Dear our dearest customer,
+
+We are pleased to inform you that you have successfully cancelled your booking. Your cancellation request has been successfully processed.
+If you have any questions or concerns regarding your refund, feel free to contact our customer support.
+
+We appreciate your understanding and thank you for choosing Airplane Booking System for your ticket purchase. If you ever plan to attend future events or book tickets, we would be delighted to assist you.
+
+Best regards,
+Your Airline Team
