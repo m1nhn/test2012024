@@ -1,0 +1,17 @@
+Subject: Flight Booking Confirmation
+
+Dear our dearest customer,
+
+We are delighted to inform you that your flight booking has been confirmed. Please check on the system for the details of your booking:
+
+mail: sopa161200@gmail.com
+Carrier: VietJet
+Departure: Hanoi
+Arrival: TPHCM
+Date: 11/1/2024
+Boarding time: 9:00
+
+Thank you for choosing our services. Have a pleasant journey!
+
+Best regards,
+Your Airline Team

@@ -1,0 +1,14 @@
+Subject: Flight Booking Confirmation
+
+Dear our dearest customer,
+
+We are delighted to inform you that your flight booking has been confirmed. Please check on the system for the details of your booking:
+
+mail: sopa161200@gmail.com
+airplane ID: 0
+number of seats: 1
+
+Thank you for choosing our services. Have a pleasant journey!
+
+Best regards,
+Your Airline Team
