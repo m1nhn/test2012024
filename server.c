@@ -156,7 +156,7 @@ void talk_to_client(int sock)
 	{
 		if (func_id == 1)
 		{
-			//printf("Hello World");
+
 			login(sock);
 			read(sock, &func_id, sizeof(int));
 		}
@@ -332,10 +332,12 @@ int signup(int sock)
 	return 3;
 }
 
+
 int menu2(int sock, int id)
 {
 	int op_id;
 	read(sock, &op_id, sizeof(op_id));
+	printf("Debug is going here %d\n", op_id);
 	if (op_id == 1)
 	{
 		// add a airplane
@@ -367,7 +369,7 @@ int menu2(int sock, int id)
 		temp.price = price;
 		strcpy(temp.date, date);
 		strcpy(temp.boarding_time, boarding_time);
-		temp.av_seats = 15;
+		temp.av_seats = 185;
 		temp.last_seatno_used = 0;
 
 		int fd = open(AIRPLANE, O_RDWR);
@@ -491,6 +493,8 @@ int menu2(int sock, int id)
 		read(fd, &temp, sizeof(struct airplane));
 
 		read(sock, &no_of_airplanes, sizeof(int));
+		printf("Debug seat is here: %d\n", no_of_airplanes);
+		printf("Welcome to 1337\n");
 		if (no_of_airplanes == 1)
 		{
 			char name[20];
@@ -505,7 +509,9 @@ int menu2(int sock, int id)
 		}
 		else if (no_of_airplanes == 3)
 		{
-			write(sock, &temp.av_seats, sizeof(temp.av_seats));
+			int test = temp.av_seats;
+			write(sock, &test, sizeof(test));
+			printf("Number of seat before change is: %d\n", test);
 			read(sock, &temp.av_seats, sizeof(temp.av_seats));
 		}
 		// else if (no_of_airplanes == 4){

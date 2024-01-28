@@ -5,6 +5,7 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/socket.h>
+#include <time.h>
 #define PORT 10000
 #define PASS_LENGTH 20
 
@@ -14,6 +15,7 @@ int do_admin_action(int sock, int action);
 int do_action(int sock, int opt);
 void view_booking(int sock);
 int menu_search(int sock, int search_option);
+void logEvent(const char *event);
 int main(int argc, char *argv[])
 {
 	char *ip = "127.0.0.1"; // default ip address if there is no parameter
@@ -52,11 +54,25 @@ int main(int argc, char *argv[])
 	return 0;
 }
 
+void logEvent(const char *event){
+	time_t now = time(NULL);
+	struct tm *tm_info = localtime(&now);
+	char timestamp[20];
+	strftime(timestamp, 20, "%Y-%m-%d %H:%M:%S", tm_info);
+
+	FILE *logFile = fopen("log.txt", "a");
+	if (logFile != NULL){
+		fprintf(logFile, "[%s] %s\n", timestamp, event);
+        fclose(logFile);
+	}
+}
+
 
 void clearInputBuffer(){
 	int c;
 	while ((c = getchar()) != '\n' && c != EOF);
 }
+
 
 int airplanesys(int sock)
 { // param is a socket
@@ -74,23 +90,28 @@ int airplanesys(int sock)
 	{
 		int type, acc_no;
 		char password[PASS_LENGTH];
-		printf("Enter the Acoount Type:\n");
+		printf("Enter the Account Type:\n");
 		printf("1. Customer\n2. Agent\n3. Admin\n");
 		printf("Your Response: ");
 		scanf("%d", &type);
 		printf("Enter Account Number: ");
 		scanf("%d", &acc_no);
-		printf("Enter your password:");
-		scanf("%s", &password);
+		strcpy(password, getpass("Enter Password: "));
+
+		char logEntrySend[100];
+		sprintf(logEntrySend, "Data Sent to Server: Type %d, Account Number %d, Password %s", type, acc_no, password);
+    	logEvent(logEntrySend);
 
 		write(sock, &type, sizeof(type));
 		write(sock, &acc_no, sizeof(acc_no));
 		write(sock, &password, strlen(password));
 
-		printf("%d %d %s", type, acc_no, password);
-
 		int valid_login;
+		char logEntryReceive[100];
 		read(sock, &valid_login, sizeof(valid_login));
+		sprintf(logEntryReceive, "Data Received from Server: Valid Login %d", valid_login);
+    	logEvent(logEntryReceive);
+
 		if (valid_login == 1)
 		{
 			while (menu2(sock, type) != -1)
@@ -99,7 +120,7 @@ int airplanesys(int sock)
 			return 1;
 		}
 		else
-		{
+		{	
 			printf("Login Not Allowed\n");
 			while (getchar() != '\n')
 				;
@@ -118,8 +139,6 @@ int airplanesys(int sock)
 		printf("Enter Customer Name: ");
 		scanf("%s", name);
 		fflush(stdin);
-		//printf("Enter Password:");
-		//scanf("%s", password);
 		strcpy(password, getpass("Enter Password: "));
 		if (type == 3)
 		{
@@ -138,11 +157,22 @@ int airplanesys(int sock)
 			else
 				exit(0);
 		}
+		char logEntry[100];
+		if (type == 1){
+			sprintf(logEntry, "User registered: Type: Customer, Name: %s, Password: %s", name, password);
+		} else if (type == 2){
+			sprintf(logEntry, "User registered: Type: Agent, Name: %s, Password: %s", name, password);
+		} else if (type == 3){
+			sprintf(logEntry, "User registered: Type: Admin, Name: %s, Password: %s", name, password);
+		}
+		logEvent(logEntry);
 		write(sock, &type, sizeof(type));
 		write(sock, &name, sizeof(name));
 		write(sock, &password, strlen(password));
 
 		read(sock, &acc_no, sizeof(acc_no));
+		sprintf(logEntry, "Account created: Account Number %d", acc_no);
+    	logEvent(logEntry);
 		printf("Remember the account no of further login: %d\n", acc_no);
 		while (getchar() != '\n')
 			;
@@ -168,6 +198,7 @@ int menu2(int sock, int type)
 		printf("6. Logout\n");
 		printf("Your Choice: ");
 		scanf("%d", &opt);
+		//write(sock, &opt, sizeof(opt));
 		return do_action(sock, opt);
 		return -1;
 	}
@@ -183,6 +214,9 @@ int menu2(int sock, int type)
 		printf("6. Logout\n");
 		printf("Your Choice: ");
 		scanf("%d", &opt);
+		//printf("Tell me something: %d\n", &opt);
+		//write(sock, &opt, sizeof(opt));
+		//printf("Tell me something: %d\n", &opt);
 		return do_admin_action(sock, opt);
 	}
 }
@@ -267,8 +301,10 @@ int do_admin_action(int sock, int opt)
 	}
 	case 3:
 	{
+		//int opt2 = 3;
 		int no_of_airplanes;
 		write(sock, &opt, sizeof(opt));
+		printf("Test %d\n", opt);
 		read(sock, &no_of_airplanes, sizeof(int));
 		while (no_of_airplanes > 0)
 		{
@@ -290,10 +326,22 @@ int do_admin_action(int sock, int opt)
 		printf("Your Choice: ");
 		scanf("%d", &no_of_airplanes);
 		write(sock, &no_of_airplanes, sizeof(int));
-		if (no_of_airplanes == 2 || no_of_airplanes == 3)
+		if (no_of_airplanes == 3)
 		{
-			read(sock, &no_of_airplanes, sizeof(int));
-			printf("Current Value: %d\n", no_of_airplanes);
+			//read(sock, &no_of_airplanes, sizeof(no_of_airplanes));
+			int current_value = 0;
+			read(sock, &current_value, sizeof(current_value));
+			printf("Current Value: %d\n", current_value);
+			printf("Enter Value: ");
+			int current_value2 = 0;
+			//scanf("%d", &no_of_airplanes);
+			scanf("%d", current_value2);
+			write(sock, &current_value2, sizeof(current_value2));
+		} else if (no_of_airplanes == 2){
+			read(sock, &no_of_airplanes, sizeof(no_of_airplanes));
+			int current_value;
+			read(sock, &current_value, sizeof(current_value));
+			printf("Current Value: %d\n", current_value);
 			printf("Enter Value: ");
 			scanf("%d", &no_of_airplanes);
 			write(sock, &no_of_airplanes, sizeof(int));

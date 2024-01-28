@@ -1,0 +1,90 @@
+[2024-01-28 18:36:46] User registered: Type:1, Name: tuan, Password: 1
+[2024-01-28 18:36:46] Account created: Account Number 11
+[2024-01-28 18:36:52] Data Sent to Server: Type 1, Account Number 11, Password 1
+[2024-01-28 18:36:52] Data Received from Server: Valid Login 1
+[2024-01-28 18:37:38] User registered: Type:3, Name: minh3, Password: 1
+[2024-01-28 18:37:38] Account created: Account Number 3
+[2024-01-28 18:40:07] User registered: Type: Customer, Name: minh10, Password: 1
+[2024-01-28 18:40:07] Account created: Account Number 12
+[2024-01-28 18:40:11] Data Sent to Server: Type 1, Account Number 12, Password 1
+[2024-01-28 18:40:11] Data Received from Server: Valid Login 1
+[2024-01-28 18:40:29] Data Sent to Server: Type 1, Account Number 12, Password 1
+[2024-01-28 18:40:29] Data Received from Server: Valid Login 1
+[2024-01-28 21:12:10] Data Sent to Server: Type 1, Account Number 12, Password 1
+[2024-01-28 21:12:10] Data Received from Server: Valid Login 1
+[2024-01-28 21:31:47] User registered: Type: Admin, Name: minh1, Password: 1
+[2024-01-28 21:31:47] Account created: Account Number 6
+[2024-01-28 21:31:52] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 21:31:52] Data Received from Server: Valid Login 1
+[2024-01-28 22:22:19] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 22:22:19] Data Received from Server: Valid Login 1
+[2024-01-28 22:23:21] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 22:23:21] Data Received from Server: Valid Login 1
+[2024-01-28 22:35:40] Data Sent to Server: Type 1, Account Number 12, Password 1
+[2024-01-28 22:35:40] Data Received from Server: Valid Login 1
+[2024-01-28 22:36:37] Data Sent to Server: Type 1, Account Number 12, Password 1
+[2024-01-28 22:36:37] Data Received from Server: Valid Login 1
+[2024-01-28 22:36:59] Data Sent to Server: Type 1, Account Number 12, Password 1
+[2024-01-28 22:36:59] Data Received from Server: Valid Login 1
+[2024-01-28 22:39:21] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 22:39:21] Data Received from Server: Valid Login 1
+[2024-01-28 22:39:43] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 22:39:43] Data Received from Server: Valid Login 1
+[2024-01-28 22:42:55] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 22:42:55] Data Received from Server: Valid Login 1
+[2024-01-28 22:43:28] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 22:43:28] Data Received from Server: Valid Login 1
+[2024-01-28 22:44:44] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 22:44:44] Data Received from Server: Valid Login 1
+[2024-01-28 22:50:25] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 22:50:25] Data Received from Server: Valid Login 1
+[2024-01-28 22:51:04] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 22:51:04] Data Received from Server: Valid Login 1
+[2024-01-28 22:58:30] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 22:58:30] Data Received from Server: Valid Login 1
+[2024-01-28 22:59:23] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 22:59:23] Data Received from Server: Valid Login 1
+[2024-01-28 23:01:12] Data Sent to Server: Type 1024, Account Number 1, Password 3
+[2024-01-28 23:01:12] Data Received from Server: Valid Login 0
+[2024-01-28 23:01:19] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 23:01:19] Data Received from Server: Valid Login 1
+[2024-01-28 23:01:59] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 23:01:59] Data Received from Server: Valid Login 1
+[2024-01-28 23:02:43] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 23:02:43] Data Received from Server: Valid Login 1
+[2024-01-28 23:03:45] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 23:03:45] Data Received from Server: Valid Login 1
+[2024-01-28 23:04:32] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 23:04:32] Data Received from Server: Valid Login 1
+[2024-01-28 23:05:06] Data Sent to Server: Type 1, Account Number 12, Password 1
+[2024-01-28 23:05:06] Data Received from Server: Valid Login 1
+[2024-01-28 23:05:31] Data Sent to Server: Type 1, Account Number 12, Password 1
+[2024-01-28 23:05:31] Data Received from Server: Valid Login 1
+[2024-01-28 23:06:17] Data Sent to Server: Type 1, Account Number 12, Password 1
+[2024-01-28 23:06:17] Data Received from Server: Valid Login 1
+[2024-01-28 23:06:56] Data Sent to Server: Type 1, Account Number 12, Password 1
+[2024-01-28 23:06:56] Data Received from Server: Valid Login 1
+[2024-01-28 23:09:06] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 23:09:06] Data Received from Server: Valid Login 1
+[2024-01-28 23:09:50] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 23:09:50] Data Received from Server: Valid Login 1
+[2024-01-28 23:12:07] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 23:12:07] Data Received from Server: Valid Login 1
+[2024-01-28 23:12:32] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 23:12:32] Data Received from Server: Valid Login 1
+[2024-01-28 23:15:03] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 23:15:03] Data Received from Server: Valid Login 1
+[2024-01-28 23:16:15] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 23:16:15] Data Received from Server: Valid Login 1
+[2024-01-28 23:18:47] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 23:18:47] Data Received from Server: Valid Login 1
+[2024-01-28 23:21:18] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 23:21:18] Data Received from Server: Valid Login 1
+[2024-01-28 23:22:28] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 23:22:28] Data Received from Server: Valid Login 1
+[2024-01-28 23:23:05] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 23:23:05] Data Received from Server: Valid Login 1
+[2024-01-28 23:24:55] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 23:24:55] Data Received from Server: Valid Login 1
+[2024-01-28 23:26:28] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 23:26:28] Data Received from Server: Valid Login 1
