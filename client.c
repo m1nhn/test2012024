@@ -464,7 +464,7 @@ int do_action(int sock, int opt)
 			if (strcmp(airplanename, "deleted") != 0)
 				printf("%-3d\t%-5d\t%-7d\t%-15s\t%-10s\t%-10s\t%-8d\t%-10s\t%-20s\n", airplaneid, airplaneno, airplaneavseats, airplanename, airplanedepart, airplanearrive, airplaneprice, airplanedate, airplane_boarding_time);
 		}
-
+		int rev_failure;
 		printf("Enter your email: ");
 		char mail[50];
 		char command[1000], command2[1000];
@@ -475,6 +475,9 @@ int do_action(int sock, int opt)
 		printf("Enter the airplane ID: ");
 		scanf("%d", &airplaneid);
 		write(sock, &airplaneid, sizeof(airplaneid));
+		//read(sock, &rev_failure, sizeof(rev_failure));
+		//printf("Sign of failure is: %d\n", rev_failure);
+		//printf("Sign from server is: %d\n", rev_failure);
 		read(sock, &airplaneavseats, sizeof(airplaneavseats));
 		printf("Enter the number of seats: ");
 		scanf("%d", &required_seats);
@@ -510,7 +513,7 @@ int do_action(int sock, int opt)
 					break;	
 				}
 				case 3:
-					printf("Please transfer to this banking account: 99999999999 - VCB");
+					printf("Please transfer to this banking account: 99999999999 - VCB\n");
 					break;
 				}
 		}

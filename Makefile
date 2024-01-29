@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wreturn-type
+#CFLAGS = -Wreturn-type
 LDFLAGS =
 TARGETS = server client
 
