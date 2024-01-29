@@ -200,3 +200,17 @@
 [2024-01-29 19:29:36] Data Received from Server: Valid Login 1
 [2024-01-29 19:29:37] Client's choice is: 1
 
+[2024-01-29 20:14:36] Data Sent to Server: Type: Customer, Account Number: 1, Password: 1
+[2024-01-29 20:14:36] Data Received from Server: Valid Login 0
+[2024-01-29 20:14:40] Data Sent to Server: Type: Customer, Account Number: 16, Password: 1
+[2024-01-29 20:14:40] Data Received from Server: Valid Login 1
+[2024-01-29 20:24:39] Data Sent to Server: Type: Customer, Account Number: 16, Password: 1
+[2024-01-29 20:24:39] Data Received from Server: Valid Login 1
+[2024-01-29 20:26:39] Data Sent to Server: Type: Customer, Account Number: 16, Password: 1
+[2024-01-29 20:26:39] Data Received from Server: Valid Login 1
+[2024-01-29 20:26:40] ?
+[2024-01-29 20:26:56] Data Sent to Server: Type: Customer, Account Number: 16, Password: 1
+[2024-01-29 20:26:56] Data Received from Server: Valid Login 2
+[2024-01-29 20:27:25] Data Sent to Server: Type: Customer, Account Number: 16, Password: 1
+[2024-01-29 20:27:25] Data Received from Server: Valid Login 1
+[2024-01-29 20:27:27] Client chooses book ticket

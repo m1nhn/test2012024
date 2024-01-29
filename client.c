@@ -99,7 +99,13 @@ int airplanesys(int sock)
 		strcpy(password, getpass("Enter Password: "));
 
 		char logEntrySend[100];
-		sprintf(logEntrySend, "Data Sent to Server: Type %d, Account Number %d, Password %s", type, acc_no, password);
+		if(type == 1){
+			sprintf(logEntrySend, "Data Sent to Server: Type: Customer, Account Number: %d, Password: %s", acc_no, password);
+		} else if (type == 2){
+			sprintf(logEntrySend, "Data Sent to Server: Type: Agent, Account Number: %d, Password: %s", acc_no, password);		
+		} else {
+			sprintf(logEntrySend, "Data Sent to Server: Type: Admin, Account Number: %d, Password: %s", acc_no, password);
+		}
     	logEvent(logEntrySend);
 
 		write(sock, &type, sizeof(type));
@@ -199,9 +205,33 @@ int menu2(int sock, int type)
 		printf("6. Logout\n");
 		printf("Your Choice: ");
 		scanf("%d", &opt);
-		sprintf(logEntry, "Client's choice is: %d\n", opt);
+		switch(opt){
+			case 1:{
+				sprintf(logEntry, "Client chooses book ticket");
+				break;
+			}
+			case 2:{
+				sprintf(logEntry, "Client chooses view bookings");
+				break;
+			}
+			case 3:{
+				sprintf(logEntry, "Client chooses update booking");
+				break;
+			}
+			case 4:{
+				sprintf(logEntry, "Client chooses cancel booking");
+				break;
+			}
+			case 5:{
+				sprintf(logEntry, "Client chooses search flights");
+				break;
+			}
+			case 6:{
+				sprintf(logEntry, "Client logs out");
+				break;
+			}
+		}
 		logEvent(logEntry);
-		//write(sock, &opt, sizeof(opt));
 		return do_action(sock, opt);
 		return -1;
 	}
