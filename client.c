@@ -210,27 +210,27 @@ int menu2(int sock, int type)
 		scanf("%d", &opt);
 		switch(opt){
 			case 1:{
-				sprintf(logEntry, "Client chooses book ticket");
+				sprintf(logEntry, "Client/Agent with id %d chooses book ticket", global_id);
 				break;
 			}
 			case 2:{
-				sprintf(logEntry, "Client chooses view bookings");
+				sprintf(logEntry, "Client/Agent with id %d chooses view bookings", global_id);
 				break;
 			}
 			case 3:{
-				sprintf(logEntry, "Client chooses update booking");
+				sprintf(logEntry, "Client/Agent with id %d chooses update booking", global_id);
 				break;
 			}
 			case 4:{
-				sprintf(logEntry, "Client chooses cancel booking");
+				sprintf(logEntry, "Client/Agent with id %d chooses cancel booking", global_id);
 				break;
 			}
 			case 5:{
-				sprintf(logEntry, "Client chooses search flights");
+				sprintf(logEntry, "Client/Agent with id %d chooses search flights", global_id);
 				break;
 			}
 			case 6:{
-				sprintf(logEntry, "Client logs out");
+				sprintf(logEntry, "Client/Agent with id %d logs out", global_id);
 				break;
 			}
 		}
@@ -250,6 +250,34 @@ int menu2(int sock, int type)
 		printf("6. Logout\n");
 		printf("Your Choice: ");
 		scanf("%d", &opt);
+		char logEntry[100];
+		switch(opt){
+			case 1:{
+				sprintf(logEntry, "Admin with id %d chooses to add airplane", global_id);
+				break;
+			}
+			case 2:{
+				sprintf(logEntry, "Admin with id %d chooses to delete airplane", global_id);
+				break;
+			}
+			case 3:{
+				sprintf(logEntry, "Admin with id %d chooses to modify airplane", global_id);
+				break;
+			}
+			case 4:{
+				sprintf(logEntry, "Admin with id %d chooses to add root user", global_id);
+				break;
+			}
+			case 5:{
+				sprintf(logEntry, "Admin with id %d chooses to delete user", global_id);
+				break;
+			}
+			case 6:{
+				sprintf(logEntry, "Admin with id %d chooses to log out", global_id);
+				break;
+			}
+		}
+		logEvent(logEntry);
 		return do_admin_action(sock, opt);
 	}
 }
@@ -266,6 +294,7 @@ int do_admin_action(int sock, int opt)
 		char arrival[50];
 		char date[11];
 		char boarding_time[7];
+		char logtime[300];
 		int price;
 		write(sock, &opt, sizeof(opt));
 		printf("Enter Airplane Name : ");
@@ -291,9 +320,16 @@ int do_admin_action(int sock, int opt)
 		write(sock, &date, sizeof(date));
 		write(sock, &boarding_time, sizeof(boarding_time));
 
+		// sprintf(logtime, "Admin with ID %d has added a new airplane with the following details: Airplane Name: %s, Airplane No.: %d, Departure: %s, Arrival: %s, Price: %d, Date: %s, and Boarding Time: %s", global_id, tname, tno, departure, arrival, price, date, boarding_time);
+		// logEvent(logtime);
+
 		read(sock, &opt, sizeof(opt));
-		if (opt == 1)
+		if (opt == 1){
 			printf("Airplane Added Successfully.\n");
+			sprintf(logtime, "Admin with id %d has added a new airplane with the following details: Airplane Name: %s, Airplane No.: %d, Departure: %s, Arrival: %s, Price: %d, Date: %s, and Boarding Time: %s", global_id, tname, tno, departure, arrival, price, date, boarding_time);
+			logEvent(logtime);
+		}
+	
 		while (getchar() != '\n')
 			;
 		getchar();

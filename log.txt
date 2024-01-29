@@ -252,3 +252,23 @@
 [2024-01-29 22:39:05] Data Sent to Server: Type: Customer, Account Number: 16, Password: 1
 [2024-01-29 22:39:05] Data Received from Server: Valid Login 1
 [2024-01-29 22:39:12] Client chooses book ticket
+[2024-01-29 22:42:49] Data Sent to Server: Type: Customer, Account Number: 16, Password: 1
+[2024-01-29 22:42:49] Data Received from Server: Valid Login 1
+[2024-01-29 22:42:52] Client/Agent with id 16 chooses book ticket
+[2024-01-29 22:53:45] Data Sent to Server: Type: Admin, Account Number: 8, Password: 1
+[2024-01-29 22:53:45] Data Received from Server: Valid Login 1
+[2024-01-29 22:53:47] Admin with id 8 chooses to modify airplane
+[2024-01-29 22:54:02] Data Sent to Server: Type: Admin, Account Number: 8, Password: 1
+[2024-01-29 22:54:02] Data Received from Server: Valid Login 1
+[2024-01-29 22:54:04] Admin with id 8 chooses to add airplane
+[2024-01-29 22:58:47] Data Sent to Server: Type: Admin, Account Number: 8, Password: 1
+[2024-01-29 22:58:47] Data Received from Server: Valid Login 1
+[2024-01-29 22:58:49] Admin with id 8 chooses to add airplane
+[2024-01-29 23:17:35] Data Sent to Server: Type: Admin, Account Number: 8, Password: 1
+[2024-01-29 23:17:35] Data Received from Server: Valid Login 1
+[2024-01-29 23:17:36] Admin with id 8 chooses to add airplane
+[2024-01-29 23:22:46] Data Sent to Server: Type: Admin, Account Number: 8, Password: 1
+[2024-01-29 23:22:46] Data Received from Server: Valid Login 1
+[2024-01-29 23:22:48] Admin with id 8 chooses to add airplane
+[2024-01-29 23:23:08] Admin with ID 8 has added a new airplane with the following details: Airplane Name: ANA, Airplane No.: 1000, Departure: SGN, Arrival: HND, Price: 1800, Date: 8/8/2024, and Boarding Time: 12:45
+[2024-01-29 23:23:24] Admin with id 8 chooses to log out
