@@ -88,3 +88,7 @@
 [2024-01-28 23:24:55] Data Received from Server: Valid Login 1
 [2024-01-28 23:26:28] Data Sent to Server: Type 3, Account Number 6, Password 1
 [2024-01-28 23:26:28] Data Received from Server: Valid Login 1
+[2024-01-28 21:10:27] User registered: Type: Customer, Name: minh1, Password: 1
+[2024-01-28 21:10:27] Account created: Account Number 13
+[2024-01-28 21:10:30] Data Sent to Server: Type 1, Account Number 13, Password 1
+[2024-01-28 21:10:30] Data Received from Server: Valid Login 1
