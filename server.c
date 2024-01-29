@@ -11,6 +11,7 @@
 #include <string.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
+#include <unistd.h>
 #include <time.h>
 #define PORT 10000
 #define AIRPLANE "./db/airplane"
@@ -670,7 +671,40 @@ int menu1(int sock, int id, int type)
 		// lseek(fd, 0, SEEK_SET);
 		lseek(fd, airplaneid * sizeof(struct airplane), SEEK_SET);
 		read(fd, &temp, sizeof(struct airplane));
+
+		//Block boarding time
+		time_t current_time;
+		time(&current_time);
+
+		struct tm boarding_tm = {0};
+		if(strptime(temp.boarding_time, "%H:%M", &boarding_tm) == NULL){
+			perror("Error time");
+			exit(EXIT_FAILURE);
+		}
+
+		struct tm boarding_date_tm = {0};
+		if(strptime(temp.date, "%d/%m/%Y", &boarding_date_tm) == NULL){
+			perror("Error date");
+			exit(EXIT_FAILURE);
+		}
+
+		boarding_tm.tm_year = boarding_date_tm.tm_year;
+		boarding_tm.tm_mon = boarding_date_tm.tm_mon;
+		boarding_tm.tm_mday = boarding_date_tm.tm_mday;
+
+		time_t boarding_time = mktime(&boarding_tm);
+		int failure = 1;
+		if (current_time > boarding_time){
+				failure = 0;
+				printf("Flight has already departed. Please choose another flight.\n");
+				write(sock, &failure, sizeof(int));
+				sleep(2);
+				close(fd);
+				return 1;
+		} else {
 		write(sock, &temp.av_seats, sizeof(int));
+		// printf("Seatssss: %d\n", temp.av_seats);
+		// printf("Boarding timeeeee: %s\n", temp.boarding_time);
 		read(sock, &seats, sizeof(seats));
 		if (seats > 0)
 		{
@@ -706,99 +740,76 @@ int menu1(int sock, int id, int type)
 			printf("boarding_time: %s\n", bk.boarding_time);
 
 			//Departure and date time
-			time_t current_time;
-			time(&current_time);
 
-			struct tm boarding_tm = {0};
-			if(strptime(bk.boarding_time, "%H:%M", &boarding_tm) == NULL){
-				perror("Error time");
-				exit(EXIT_FAILURE);
-			}
+			//write(sock, &failure, sizeof(int));
+			// else {
+			// 	char command[1000], command2[1000];
+			// 	sprintf(command2,
+    		// 	"echo \"Subject: Flight Booking Confirmation\nContent-Type: text/html\n\n<html><body style='font-family: Arial, sans-serif; padding: 20px;'><h2 style='color: #3498db;'>Flight Booking Confirmation</h2><p>Dear our dearest customer,</p><p>We are delighted to inform you that your flight booking has been confirmed. Please check on the system for the details of your booking:</p><ul style='list-style-type: none; padding: 0;'><li><strong>Email:</strong> %s</li><li><strong>Carrier:</strong> %s</li><li><strong>Departure:</strong> %s</li><li><strong>Arrival:</strong> %s</li><li><strong>Date:</strong> %s</li><li><strong>Boarding time:</strong> %s</li></ul><p>Thank you for choosing our services. Have a pleasant journey!</p><p style='color: #555;'>Best regards,<br>Your Airline Team</p></body></html>\" > email2.html",
+    		// 	mail, bk.airplanename, bk.departure, bk.arrival, bk.date, bk.boarding_time);
+			// 	system(command2);
+			// 	sprintf(command,
+			// 		"curl -s --url 'smtp://smtp.gmail.com:587' --ssl-reqd "
+			// 		"--mail-from 'toniminh161200@gmail.com' --mail-rcpt %s "
+			// 		"--user 'toniminh161200@gmail.com:tkxj thcp fpzf exna' --tlsv1.2 --upload-file email2.html",
+			// 		mail);
+			// 	//printf("Email has been sent sucesfully to: %s",mail);
+			// 	system(command);
+			// 	bk.seat_start = temp.last_seatno_used + 1;
+			// 	bk.seat_end = temp.last_seatno_used + seats;
+			// 	temp.last_seatno_used = bk.seat_end;
+			// 	write(fd2, &bk, sizeof(bk));
+			// 	lock.l_type = F_UNLCK;
+			// 	fcntl(fd2, F_SETLK, &lock);
+			// 	close(fd2);
+			// 	lseek(fd, -1 * sizeof(struct airplane), SEEK_CUR);
+			// 	write(fd, &temp, sizeof(temp));
+			// 	}
+			// 	fcntl(fd, F_SETLK, &lock);
+			// 	close(fd);
 
-			struct tm boarding_date_tm = {0};
-			if(strptime(bk.date, "%d/%m/%Y", &boarding_date_tm) == NULL){
-				perror("Error date");
-				exit(EXIT_FAILURE);
-			}
+			// 	if (seats <= 0)
+			// 		op_id = -1;
+			// 	write(sock, &op_id, sizeof(op_id));
+			// 	return 1;
+			// }
 
-			boarding_tm.tm_year = boarding_date_tm.tm_year;
-			boarding_tm.tm_mon = boarding_date_tm.tm_mon;
-			boarding_tm.tm_mday = boarding_date_tm.tm_mday;
-
-			time_t boarding_time = mktime(&boarding_tm);
-			int failure = 1;
-			if (current_time > boarding_time){
-				failure = 0;
-				//write(sock, &failure, sizeof(int));
-				exit(1);
-			} 
-			else {
-				char command[1000], command2[1000];
-				sprintf(command2,
-    			"echo \"Subject: Flight Booking Confirmation\nContent-Type: text/html\n\n<html><body style='font-family: Arial, sans-serif; padding: 20px;'><h2 style='color: #3498db;'>Flight Booking Confirmation</h2><p>Dear our dearest customer,</p><p>We are delighted to inform you that your flight booking has been confirmed. Please check on the system for the details of your booking:</p><ul style='list-style-type: none; padding: 0;'><li><strong>Email:</strong> %s</li><li><strong>Carrier:</strong> %s</li><li><strong>Departure:</strong> %s</li><li><strong>Arrival:</strong> %s</li><li><strong>Date:</strong> %s</li><li><strong>Boarding time:</strong> %s</li></ul><p>Thank you for choosing our services. Have a pleasant journey!</p><p style='color: #555;'>Best regards,<br>Your Airline Team</p></body></html>\" > email2.html",
-    			mail, bk.airplanename, bk.departure, bk.arrival, bk.date, bk.boarding_time);
-				system(command2);
-				sprintf(command,
+			char command[1000], command2[1000];
+			sprintf(command2,
+    "echo \"Subject: Flight Booking Confirmation\nContent-Type: text/html\n\n<html><body style='font-family: Arial, sans-serif; padding: 20px;'><h2 style='color: #3498db;'>Flight Booking Confirmation</h2><p>Dear our dearest customer,</p><p>We are delighted to inform you that your flight booking has been confirmed. Please check on the system for the details of your booking:</p><ul style='list-style-type: none; padding: 0;'><li><strong>Email:</strong> %s</li><li><strong>Carrier:</strong> %s</li><li><strong>Departure:</strong> %s</li><li><strong>Arrival:</strong> %s</li><li><strong>Date:</strong> %s</li><li><strong>Boarding time:</strong> %s</li></ul><p>Thank you for choosing our services. Have a pleasant journey!</p><p style='color: #555;'>Best regards,<br>Your Airline Team</p></body></html>\" > email2.html",
+    mail, bk.airplanename, bk.departure, bk.arrival, bk.date, bk.boarding_time);
+			system(command2);
+			sprintf(command,
 					"curl -s --url 'smtp://smtp.gmail.com:587' --ssl-reqd "
 					"--mail-from 'toniminh161200@gmail.com' --mail-rcpt %s "
 					"--user 'toniminh161200@gmail.com:tkxj thcp fpzf exna' --tlsv1.2 --upload-file email2.html",
 					mail);
-				//printf("Email has been sent sucesfully to: %s",mail);
-				system(command);
-				bk.seat_start = temp.last_seatno_used + 1;
-				bk.seat_end = temp.last_seatno_used + seats;
-				temp.last_seatno_used = bk.seat_end;
-				write(fd2, &bk, sizeof(bk));
-				lock.l_type = F_UNLCK;
-				fcntl(fd2, F_SETLK, &lock);
-				close(fd2);
-				lseek(fd, -1 * sizeof(struct airplane), SEEK_CUR);
-				write(fd, &temp, sizeof(temp));
-				}
-				fcntl(fd, F_SETLK, &lock);
-				close(fd);
+			//printf("Email has been sent sucesfully to: %s",mail);
+			system(command);
+			// if (system(command) == 0){
+			// 	printf("Email has been sent successfully to: %s\t", mail);
+			// } else {
+			// 	perror("Failure to send email");
+			// 	exit(EXIT_FAILURE);
+			// }
+			bk.seat_start = temp.last_seatno_used + 1;
+			bk.seat_end = temp.last_seatno_used + seats;
+			temp.last_seatno_used = bk.seat_end;
+			write(fd2, &bk, sizeof(bk));
+			lock.l_type = F_UNLCK;
+			fcntl(fd2, F_SETLK, &lock);
+			close(fd2);
+			lseek(fd, -1 * sizeof(struct airplane), SEEK_CUR);
+			write(fd, &temp, sizeof(temp));
+		}
+		fcntl(fd, F_SETLK, &lock);
+		close(fd);
 
-				if (seats <= 0)
-					op_id = -1;
-				write(sock, &op_id, sizeof(op_id));
-				return 1;
-			}
-
-	// 		char command[1000], command2[1000];
-	// 		sprintf(command2,
-    // "echo \"Subject: Flight Booking Confirmation\nContent-Type: text/html\n\n<html><body style='font-family: Arial, sans-serif; padding: 20px;'><h2 style='color: #3498db;'>Flight Booking Confirmation</h2><p>Dear our dearest customer,</p><p>We are delighted to inform you that your flight booking has been confirmed. Please check on the system for the details of your booking:</p><ul style='list-style-type: none; padding: 0;'><li><strong>Email:</strong> %s</li><li><strong>Carrier:</strong> %s</li><li><strong>Departure:</strong> %s</li><li><strong>Arrival:</strong> %s</li><li><strong>Date:</strong> %s</li><li><strong>Boarding time:</strong> %s</li></ul><p>Thank you for choosing our services. Have a pleasant journey!</p><p style='color: #555;'>Best regards,<br>Your Airline Team</p></body></html>\" > email2.html",
-    // mail, bk.airplanename, bk.departure, bk.arrival, bk.date, bk.boarding_time);
-	// 		system(command2);
-	// 		sprintf(command,
-	// 				"curl -s --url 'smtp://smtp.gmail.com:587' --ssl-reqd "
-	// 				"--mail-from 'toniminh161200@gmail.com' --mail-rcpt %s "
-	// 				"--user 'toniminh161200@gmail.com:tkxj thcp fpzf exna' --tlsv1.2 --upload-file email2.html",
-	// 				mail);
-	// 		printf("Email has been sent sucesfully to: %s",mail);
-	// 		system(command);
-	// 		// if (system(command) == 0){
-	// 		// 	printf("Email has been sent successfully to: %s\t", mail);
-	// 		// } else {
-	// 		// 	perror("Failure to send email");
-	// 		// 	exit(EXIT_FAILURE);
-	// 		// }
-	// 		bk.seat_start = temp.last_seatno_used + 1;
-	// 		bk.seat_end = temp.last_seatno_used + seats;
-	// 		temp.last_seatno_used = bk.seat_end;
-	// 		write(fd2, &bk, sizeof(bk));
-	// 		lock.l_type = F_UNLCK;
-	// 		fcntl(fd2, F_SETLK, &lock);
-	// 		close(fd2);
-	// 		lseek(fd, -1 * sizeof(struct airplane), SEEK_CUR);
-	// 		write(fd, &temp, sizeof(temp));
-	// 	}
-	// 	fcntl(fd, F_SETLK, &lock);
-	// 	close(fd);
-
-	// 	if (seats <= 0)
-	// 		op_id = -1;
-	// 	write(sock, &op_id, sizeof(op_id));
-	// 	return 1;
+		if (seats <= 0)
+			op_id = -1;
+		write(sock, &op_id, sizeof(op_id));
+		return 1;
+		}
 	}
 	if (op_id == 2)
 	{

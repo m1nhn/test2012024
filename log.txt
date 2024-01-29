@@ -154,3 +154,39 @@
 [2024-01-29 13:45:47] Data Received from Server: Valid Login 1
 [2024-01-29 13:46:25] Data Sent to Server: Type 1, Account Number 14, Password 1
 [2024-01-29 13:46:25] Data Received from Server: Valid Login 1
+[2024-01-29 13:59:45] Data Sent to Server: Type 1, Account Number 14, Password 1
+[2024-01-29 13:59:45] Data Received from Server: Valid Login 1
+[2024-01-29 14:01:09] Data Sent to Server: Type 1, Account Number 14, Password 1
+[2024-01-29 14:01:09] Data Received from Server: Valid Login 1
+[2024-01-29 14:20:24] Data Sent to Server: Type 1, Account Number 14, Password 1
+[2024-01-29 14:20:24] Data Received from Server: Valid Login 1
+[2024-01-29 14:21:26] Data Sent to Server: Type 1, Account Number 14, Password 1
+[2024-01-29 14:21:26] Data Received from Server: Valid Login 1
+[2024-01-29 14:25:01] Data Sent to Server: Type 1, Account Number 14, Password 1
+[2024-01-29 14:25:01] Data Received from Server: Valid Login 1
+[2024-01-29 14:26:05] Data Sent to Server: Type 1, Account Number 14, Password 1
+[2024-01-29 14:26:05] Data Received from Server: Valid Login 1
+[2024-01-29 14:28:59] Data Sent to Server: Type 1, Account Number 14, Password 1
+[2024-01-29 14:28:59] Data Received from Server: Valid Login 1
+[2024-01-29 14:30:23] Data Sent to Server: Type 1, Account Number 14, Password 1
+[2024-01-29 14:30:23] Data Received from Server: Valid Login 1
+[2024-01-29 14:31:06] Data Sent to Server: Type 1, Account Number 14, Password 1
+[2024-01-29 14:31:06] Data Received from Server: Valid Login 1
+[2024-01-29 14:32:51] Data Sent to Server: Type 1, Account Number 14, Password 1
+[2024-01-29 14:32:51] Data Received from Server: Valid Login 1
+[2024-01-29 14:36:02] Data Sent to Server: Type 1, Account Number 14, Password 1
+[2024-01-29 14:36:02] Data Received from Server: Valid Login 1
+[2024-01-29 15:04:35] Data Sent to Server: Type 1, Account Number 14, Password 1
+[2024-01-29 15:04:35] Data Received from Server: Valid Login 1
+[2024-01-29 15:05:22] Data Sent to Server: Type 1, Account Number 14, Password 1
+[2024-01-29 15:05:22] Data Received from Server: Valid Login 1
+[2024-01-29 15:14:28] Data Sent to Server: Type 1, Account Number 14, Password 1
+[2024-01-29 15:14:28] Data Received from Server: Valid Login 1
+[2024-01-29 15:15:19] Data Sent to Server: Type 1, Account Number 14, Password 1
+[2024-01-29 15:15:19] Data Received from Server: Valid Login 1
+[2024-01-29 15:15:56] Data Sent to Server: Type 1, Account Number 14, Password 1
+[2024-01-29 15:15:56] Data Received from Server: Valid Login 1
+[2024-01-29 15:17:00] Data Sent to Server: Type 1, Account Number 14, Password 1
+[2024-01-29 15:17:00] Data Received from Server: Valid Login 1
+[2024-01-29 15:18:18] Data Sent to Server: Type 1, Account Number 14, Password 1
+[2024-01-29 15:18:18] Data Received from Server: Valid Login 1

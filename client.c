@@ -475,12 +475,22 @@ int do_action(int sock, int opt)
 		printf("Enter the airplane ID: ");
 		scanf("%d", &airplaneid);
 		write(sock, &airplaneid, sizeof(airplaneid));
-		//read(sock, &rev_failure, sizeof(rev_failure));
-		//printf("Sign of failure is: %d\n", rev_failure);
-		//printf("Sign from server is: %d\n", rev_failure);
-		read(sock, &airplaneavseats, sizeof(airplaneavseats));
-		printf("Enter the number of seats: ");
-		scanf("%d", &required_seats);
+
+		//Check sign from server
+		int recv_failure;
+		read(sock, &recv_failure, sizeof(int));
+		//printf("Fuckkkk failure: %d\n", recv_failure);
+		if(recv_failure == 0){
+			printf("Flight has already departed. Please choose another flight\n");
+			while(getchar() != '\n');
+			getchar();
+			//sleep(2);
+			return 1;
+		} 
+		else {
+			read(sock, &airplaneavseats, sizeof(airplaneavseats));
+			printf("Enter the number of seats: ");
+			scanf("%d", &required_seats);
 		if (airplaneavseats >= required_seats && required_seats > 0)
 			write(sock, &required_seats, sizeof(required_seats));
 		else
@@ -524,6 +534,8 @@ int do_action(int sock, int opt)
 		while (getchar() != '\n');
 		getchar();
 		return 1;
+		}
+		
 	}
 	case 2:
 	{
