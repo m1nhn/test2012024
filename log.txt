@@ -118,3 +118,13 @@
 [2024-01-29 10:39:50] Account created: Account Number 14
 [2024-01-29 10:39:54] Data Sent to Server: Type 1, Account Number 14, Password 1
 [2024-01-29 10:39:54] Data Received from Server: Valid Login 1
+[2024-01-29 10:54:21] Data Sent to Server: Type 1, Account Number 7, Password 1
+[2024-01-29 10:54:21] Data Received from Server: Valid Login 0
+[2024-01-29 10:54:28] User registered: Type: Customer, Name: minh, Password: 1
+[2024-01-29 10:54:28] Account created: Account Number 15
+[2024-01-29 10:54:31] Data Sent to Server: Type 1, Account Number 15, Password 1
+[2024-01-29 10:54:31] Data Received from Server: Valid Login 1
+[2024-01-29 11:09:55] Data Sent to Server: Type 3, Account Number 7, Password 1
+[2024-01-29 11:09:55] Data Received from Server: Valid Login 1
+[2024-01-29 11:14:26] Data Sent to Server: Type 1, Account Number 14, Password 1
+[2024-01-29 11:14:26] Data Received from Server: Valid Login 1

@@ -333,8 +333,8 @@ int do_admin_action(int sock, int opt)
 			// 	perror("Read failed");
             // 	exit(EXIT_FAILURE);
 			// }
-			printf("Current Value: %d\n", current_value);
-			printf("Enter Value: ");
+			//printf("Current Value: %d\n", current_value);
+			printf("Enter the number of seats you want to update: ");
 			// /int current_value2 = 0;
 			scanf("%d", &current_value_2);
 			//scanf("%d", current_value2);

@@ -713,6 +713,12 @@ int menu1(int sock, int id, int type)
 					mail);
 			printf("Email has been sent sucesfully to: %s",mail);
 			system(command);
+			// if (system(command) == 0){
+			// 	printf("Email has been sent successfully to: %s\t", mail);
+			// } else {
+			// 	perror("Failure to send email");
+			// 	exit(EXIT_FAILURE);
+			// }
 			bk.seat_start = temp.last_seatno_used + 1;
 			bk.seat_end = temp.last_seatno_used + seats;
 			temp.last_seatno_used = bk.seat_end;
