@@ -214,9 +214,6 @@ int menu2(int sock, int type)
 		printf("6. Logout\n");
 		printf("Your Choice: ");
 		scanf("%d", &opt);
-		//printf("Tell me something: %d\n", &opt);
-		//write(sock, &opt, sizeof(opt));
-		//printf("Tell me something: %d\n", &opt);
 		return do_admin_action(sock, opt);
 	}
 }
@@ -326,17 +323,22 @@ int do_admin_action(int sock, int opt)
 		printf("Your Choice: ");
 		scanf("%d", &no_of_airplanes);
 		write(sock, &no_of_airplanes, sizeof(int));
+		printf("Your choice has been sent: %d\n", no_of_airplanes);
+		int current_value = 0, current_value_2 = 0;
 		if (no_of_airplanes == 3)
 		{
-			//read(sock, &no_of_airplanes, sizeof(no_of_airplanes));
-			int current_value = 0;
-			read(sock, &current_value, sizeof(current_value));
+			//read(sock, &no_of_airplanes, sizeof(int));
+			//int current_value = 0;
+			// if((read(sock, &current_value, sizeof(current_value)) == -1)){
+			// 	perror("Read failed");
+            // 	exit(EXIT_FAILURE);
+			// }
 			printf("Current Value: %d\n", current_value);
 			printf("Enter Value: ");
-			int current_value2 = 0;
-			//scanf("%d", &no_of_airplanes);
-			scanf("%d", current_value2);
-			write(sock, &current_value2, sizeof(current_value2));
+			// /int current_value2 = 0;
+			scanf("%d", &current_value_2);
+			//scanf("%d", current_value2);
+			write(sock, &current_value_2, sizeof(int));
 		} else if (no_of_airplanes == 2){
 			read(sock, &no_of_airplanes, sizeof(no_of_airplanes));
 			int current_value;

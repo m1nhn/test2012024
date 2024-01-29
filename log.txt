@@ -92,3 +92,29 @@
 [2024-01-28 21:10:27] Account created: Account Number 13
 [2024-01-28 21:10:30] Data Sent to Server: Type 1, Account Number 13, Password 1
 [2024-01-28 21:10:30] Data Received from Server: Valid Login 1
+[2024-01-28 21:39:48] Data Sent to Server: Type 3, Account Number 6, Password 1
+[2024-01-28 21:39:48] Data Received from Server: Valid Login 0
+[2024-01-28 21:40:04] User registered: Type: Admin, Name: test, Password: 1
+[2024-01-28 21:40:04] Account created: Account Number 7
+[2024-01-28 21:40:10] Data Sent to Server: Type 3, Account Number 7, Password 1
+[2024-01-28 21:40:10] Data Received from Server: Valid Login 1
+[2024-01-29 09:43:01] Data Sent to Server: Type 3, Account Number 7, Password 1
+[2024-01-29 09:43:01] Data Received from Server: Valid Login 1
+[2024-01-29 09:46:37] Data Sent to Server: Type 3, Account Number 7, Password 1
+[2024-01-29 09:46:37] Data Received from Server: Valid Login 1
+[2024-01-29 09:55:37] Data Sent to Server: Type 3, Account Number 7, Password 1
+[2024-01-29 09:55:37] Data Received from Server: Valid Login 1
+[2024-01-29 09:59:45] Data Sent to Server: Type 3, Account Number 7, Password 1
+[2024-01-29 09:59:45] Data Received from Server: Valid Login 1
+[2024-01-29 10:04:15] Data Sent to Server: Type 3, Account Number 7, Password 1
+[2024-01-29 10:04:15] Data Received from Server: Valid Login 1
+[2024-01-29 10:30:10] Data Sent to Server: Type 3, Account Number 7, Password 1
+[2024-01-29 10:30:10] Data Received from Server: Valid Login 1
+[2024-01-29 10:30:46] Data Sent to Server: Type 3, Account Number 7, Password 1
+[2024-01-29 10:30:46] Data Received from Server: Valid Login 1
+[2024-01-29 10:39:44] Data Sent to Server: Type 1, Account Number 12, Password 1
+[2024-01-29 10:39:44] Data Received from Server: Valid Login 0
+[2024-01-29 10:39:50] User registered: Type: Customer, Name: aaa, Password: 1
+[2024-01-29 10:39:50] Account created: Account Number 14
+[2024-01-29 10:39:54] Data Sent to Server: Type 1, Account Number 14, Password 1
+[2024-01-29 10:39:54] Data Received from Server: Valid Login 1

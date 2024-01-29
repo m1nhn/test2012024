@@ -495,24 +495,26 @@ int menu2(int sock, int id)
 		read(sock, &no_of_airplanes, sizeof(int));
 		printf("Debug seat is here: %d\n", no_of_airplanes);
 		printf("Welcome to 1337\n");
-		if (no_of_airplanes == 1)
+		if (no_of_airplanes == 3)
 		{
-			char name[20];
-			write(sock, &temp.airplane_name, sizeof(temp.airplane_name));
-			read(sock, &name, sizeof(name));
-			strcpy(temp.airplane_name, name);
+			int test = temp.av_seats;
+			write(sock, &test, sizeof(test));
+			printf("Number of seat before change is: %d\n", test);
+			read(sock, &temp.av_seats, sizeof(temp.av_seats));
+			printf("Number of seats has been changed: %d\n", temp.av_seats);
+		
 		}
 		else if (no_of_airplanes == 2)
 		{
 			write(sock, &temp.airplane_no, sizeof(temp.airplane_no));
 			read(sock, &temp.airplane_no, sizeof(temp.airplane_no));
 		}
-		else if (no_of_airplanes == 3)
+		else if (no_of_airplanes == 1)
 		{
-			int test = temp.av_seats;
-			write(sock, &test, sizeof(test));
-			printf("Number of seat before change is: %d\n", test);
-			read(sock, &temp.av_seats, sizeof(temp.av_seats));
+			char name[20];
+			write(sock, &temp.airplane_name, sizeof(temp.airplane_name));
+			read(sock, &name, sizeof(name));
+			strcpy(temp.airplane_name, name);
 		}
 		// else if (no_of_airplanes == 4){
 		// update new fields to modify
