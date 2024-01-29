@@ -339,7 +339,7 @@ int menu2(int sock, int id)
 {
 	int op_id;
 	read(sock, &op_id, sizeof(op_id));
-	printf("Debug is going here %d\n", op_id);
+	//printf("Debug is going here %d\n", op_id);
 	if (op_id == 1)
 	{
 		// add a airplane
@@ -481,15 +481,15 @@ int menu2(int sock, int id)
 			write(sock, &temp.tid, sizeof(int));
 			write(sock, &temp.airplane_name, sizeof(temp.airplane_name));
 			write(sock, &temp.airplane_no, sizeof(int));
-			write(sock, &temp.departure, sizeof(temp.departure));
-			write(sock, &temp.arrival, sizeof(temp.arrival));
-			write(sock, &temp.price, sizeof(int));
-			write(sock, &temp.date, sizeof(temp.date));
-			write(sock, &temp.boarding_time, sizeof(temp.boarding_time));
+			//write(sock, &temp.departure, sizeof(temp.departure));
+			//write(sock, &temp.arrival, sizeof(temp.arrival));
+			// write(sock, &temp.price, sizeof(int));
+			// write(sock, &temp.date, sizeof(temp.date));
+			// write(sock, &temp.boarding_time, sizeof(temp.boarding_time));
 		}
 		read(sock, &no_of_airplanes, sizeof(int));
 
-		struct airplane temp;
+		struct airplane temp = {0};
 		lseek(fd, 0, SEEK_SET);
 		lseek(fd, (no_of_airplanes - 1) * sizeof(struct airplane), SEEK_CUR);
 		read(fd, &temp, sizeof(struct airplane));

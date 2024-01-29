@@ -214,3 +214,41 @@
 [2024-01-29 20:27:25] Data Sent to Server: Type: Customer, Account Number: 16, Password: 1
 [2024-01-29 20:27:25] Data Received from Server: Valid Login 1
 [2024-01-29 20:27:27] Client chooses book ticket
+[2024-01-29 20:38:25] Data Sent to Server: Type: Customer, Account Number: 16, Password: 1
+[2024-01-29 20:38:25] Data Received from Server: Valid Login 1
+[2024-01-29 20:39:05] Data Sent to Server: Type: Customer, Account Number: 16, Password: 1
+[2024-01-29 20:39:05] Data Received from Server: Valid Login 1
+[2024-01-29 20:39:06] Client chooses book ticket
+[2024-01-29 20:46:38] Data Sent to Server: Type: Customer, Account Number: 16, Password: 1
+[2024-01-29 20:46:38] Data Received from Server: Valid Login 1
+[2024-01-29 21:09:33] User registered: Type: Customer, Name: minh2, Password: 1
+[2024-01-29 21:09:33] Account created: Account Number 17
+[2024-01-29 21:11:32] Data Sent to Server: Type: Customer, Account Number: 17, Password: 1
+[2024-01-29 21:11:32] Data Received from Server: Valid Login 1
+[2024-01-29 21:15:09] Data Sent to Server: Type: Customer, Account Number: 16, Password: 1
+[2024-01-29 21:15:09] Data Received from Server: Valid Login 1
+[2024-01-29 21:15:14] Data Sent to Server: Type: Customer, Account Number: 17, Password: 1
+[2024-01-29 21:15:14] Data Received from Server: Valid Login 1
+[2024-01-29 21:23:07] Data Sent to Server: Type: Admin, Account Number: 7, Password: 1
+[2024-01-29 21:23:07] Data Received from Server: Valid Login 0
+[2024-01-29 21:23:14] User registered: Type: Admin, Name: iii, Password: 1
+[2024-01-29 21:23:14] Account created: Account Number 8
+[2024-01-29 21:23:20] Data Sent to Server: Type: Admin, Account Number: 8, Password: 1
+[2024-01-29 21:23:20] Data Received from Server: Valid Login 1
+[2024-01-29 21:24:41] Data Sent to Server: Type: Admin, Account Number: 8, Password: 1
+[2024-01-29 21:24:41] Data Received from Server: Valid Login 1
+[2024-01-29 21:33:32] Data Sent to Server: Type: Admin, Account Number: 8, Password: 1
+[2024-01-29 21:33:32] Data Received from Server: Valid Login 1
+[2024-01-29 21:37:26] Data Sent to Server: Type: Customer, Account Number: 16, Password: 1
+[2024-01-29 21:37:26] Data Received from Server: Valid Login 1
+[2024-01-29 21:37:27] Client chooses book ticket
+[2024-01-29 21:37:47] Data Sent to Server: Type: Admin, Account Number: 8, Password: 1
+[2024-01-29 21:37:47] Data Received from Server: Valid Login 1
+[2024-01-29 21:41:40] Data Sent to Server: Type: Admin, Account Number: 8, Password: 1
+[2024-01-29 21:41:40] Data Received from Server: Valid Login 1
+[2024-01-29 21:42:06] Data Sent to Server: Type: Customer, Account Number: 16, Password: 1
+[2024-01-29 21:42:06] Data Received from Server: Valid Login 1
+[2024-01-29 21:42:07] Client chooses book ticket
+[2024-01-29 22:39:05] Data Sent to Server: Type: Customer, Account Number: 16, Password: 1
+[2024-01-29 22:39:05] Data Received from Server: Valid Login 1
+[2024-01-29 22:39:12] Client chooses book ticket

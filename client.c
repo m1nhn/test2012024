@@ -6,6 +6,7 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <time.h>
+#include "globas.h"
 #define PORT 10000
 #define PASS_LENGTH 20
 
@@ -67,12 +68,12 @@ void logEvent(const char *event){
 	}
 }
 
-
 void clearInputBuffer(){
 	int c;
 	while ((c = getchar()) != '\n' && c != EOF);
 }
 
+int global_id = 0;
 
 int airplanesys(int sock)
 { // param is a socket
@@ -120,6 +121,7 @@ int airplanesys(int sock)
 
 		if (valid_login == 1)
 		{
+			global_id = acc_no;
 			while (menu2(sock, type) != -1)
 				;
 			system("clear");
@@ -196,6 +198,7 @@ int menu2(int sock, int type)
 	if (type == 1 || type == 2)
 	{
 		system("clear");
+
 		printf("++++ OPTIONS ++++\n");
 		printf("1. Book Ticket\n");
 		printf("2. View Bookings\n");
@@ -334,8 +337,10 @@ int do_admin_action(int sock, int opt)
 		//int opt2 = 3;
 		int no_of_airplanes;
 		write(sock, &opt, sizeof(opt));
-		printf("Test %d\n", opt);
+		//printf("Test %d\n", opt);
+		//475 server - 341 client
 		read(sock, &no_of_airplanes, sizeof(int));
+		printf("Test: %d\n", no_of_airplanes);
 		while (no_of_airplanes > 0)
 		{
 			int tid, tno;
@@ -360,13 +365,13 @@ int do_admin_action(int sock, int opt)
 		int current_value = 0, current_value_2 = 0;
 		if (no_of_airplanes == 3)
 		{
-			//read(sock, &no_of_airplanes, sizeof(int));
+			read(sock, &current_value, sizeof(int));
 			//int current_value = 0;
 			// if((read(sock, &current_value, sizeof(current_value)) == -1)){
 			// 	perror("Read failed");
             // 	exit(EXIT_FAILURE);
 			// }
-			//printf("Current Value: %d\n", current_value);
+			printf("Current Value: %d\n", current_value);
 			printf("Enter the number of seats you want to update: ");
 			// /int current_value2 = 0;
 			scanf("%d", &current_value_2);
