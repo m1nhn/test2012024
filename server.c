@@ -495,8 +495,8 @@ int menu2(int sock, int id)
 		read(fd, &temp, sizeof(struct airplane));
 
 		read(sock, &no_of_airplanes, sizeof(int));
-		printf("Debug seat is here: %d\n", no_of_airplanes);
-		printf("Welcome to 1337\n");
+		//printf("Debug seat is here: %d\n", no_of_airplanes);
+		//printf("Welcome to 1337\n");
 		if (no_of_airplanes == 3)
 		{
 			int test = temp.av_seats;

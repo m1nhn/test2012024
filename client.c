@@ -186,6 +186,7 @@ int airplanesys(int sock)
 int menu2(int sock, int type)
 {
 	int opt = 0;
+	char logEntry[100];
 	if (type == 1 || type == 2)
 	{
 		system("clear");
@@ -198,6 +199,8 @@ int menu2(int sock, int type)
 		printf("6. Logout\n");
 		printf("Your Choice: ");
 		scanf("%d", &opt);
+		sprintf(logEntry, "Client's choice is: %d\n", opt);
+		logEvent(logEntry);
 		//write(sock, &opt, sizeof(opt));
 		return do_action(sock, opt);
 		return -1;
