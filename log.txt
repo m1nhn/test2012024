@@ -367,3 +367,7 @@
 [2024-01-30 14:52:52] Admin with id 9 chooses to modify airplane
 [2024-01-30 14:52:54] Admin with id 9 has chosen airplane ID 1 to modify
 [2024-01-30 14:52:57] Admin with id 9 has updated number of airplane ID 2 from 18 to 19
+[2024-01-30 15:06:40] Data Sent to Server: Type: Admin, Account Number: 9, Password: 1
+[2024-01-30 15:06:40] Data Received from Server: Valid Login 1
+[2024-01-30 15:06:41] Admin with id 9 chooses to modify airplane
+[2024-01-30 15:06:44] Admin with id 9 has chosen airplane ID 1 to modify

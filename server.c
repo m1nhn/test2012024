@@ -519,6 +519,7 @@ int menu2(int sock, int id)
 			char name[20];
 			write(sock, &temp.airplane_name, sizeof(temp.airplane_name));
 			read(sock, &name, sizeof(name));
+			printf("Name is :%s\n",name);
 			strcpy(temp.airplane_name, name);
 		}
 		// else if (no_of_airplanes == 4){
