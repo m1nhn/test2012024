@@ -272,3 +272,33 @@
 [2024-01-29 23:22:48] Admin with id 8 chooses to add airplane
 [2024-01-29 23:23:08] Admin with ID 8 has added a new airplane with the following details: Airplane Name: ANA, Airplane No.: 1000, Departure: SGN, Arrival: HND, Price: 1800, Date: 8/8/2024, and Boarding Time: 12:45
 [2024-01-29 23:23:24] Admin with id 8 chooses to log out
+[2024-01-30 08:19:19] Data Sent to Server: Type: Customer, Account Number: 16, Password: 1
+[2024-01-30 08:19:19] Data Received from Server: Valid Login 0
+[2024-01-30 09:10:30] Data Sent to Server: Type: Customer, Account Number: 16, Password: 1
+[2024-01-30 09:10:30] Data Received from Server: Valid Login 0
+[2024-01-30 09:10:37] User registered: Type: Admin, Name: minh2, Password: 1
+[2024-01-30 09:10:37] Account created: Account Number 9
+[2024-01-30 09:10:40] Data Sent to Server: Type: Customer, Account Number: 9, Password: 1
+[2024-01-30 09:10:40] Data Received from Server: Valid Login 0
+[2024-01-30 09:11:56] Data Sent to Server: Type: Admin, Account Number: 9, Password: 1
+[2024-01-30 09:11:56] Data Received from Server: Valid Login 1
+[2024-01-30 09:12:03] Admin with id 9 chooses to delete airplane
+[2024-01-30 09:32:57] Data Sent to Server: Type: Admin, Account Number: 9, Password: 1
+[2024-01-30 09:32:57] Data Received from Server: Valid Login 1
+[2024-01-30 09:33:00] Admin with id 9 chooses to delete airplane
+[2024-01-30 09:33:25] Admin with id 9 has deleted airplane ID 3
+[2024-01-30 09:33:29] Admin with id 9 chooses to delete airplane
+[2024-01-30 09:36:12] Data Sent to Server: Type: Admin, Account Number: 9, Password: 1
+[2024-01-30 09:36:12] Data Received from Server: Valid Login 1
+[2024-01-30 09:36:13] Admin with id 9 chooses to delete airplane
+[2024-01-30 09:37:01] Data Sent to Server: Type: Admin, Account Number: 9, Password: 1
+[2024-01-30 09:37:01] Data Received from Server: Valid Login 1
+[2024-01-30 09:37:03] Admin with id 9 chooses to delete airplane
+[2024-01-30 09:38:18] Data Sent to Server: Type: Admin, Account Number: 9, Password: 1
+[2024-01-30 09:38:18] Data Received from Server: Valid Login 1
+[2024-01-30 09:38:19] Admin with id 9 chooses to delete airplane
+[2024-01-30 09:38:23] Admin with id 9 has deleted airplane ID 5
+[2024-01-30 09:42:36] Data Sent to Server: Type: Admin, Account Number: 9, Password: 1
+[2024-01-30 09:42:36] Data Received from Server: Valid Login 1
+[2024-01-30 09:42:37] Admin with id 9 chooses to modify airplane
+[2024-01-30 09:42:40] Admin with id 9 has choosen airplane ID 3 to modify

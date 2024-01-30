@@ -421,22 +421,22 @@ int menu2(int sock, int id)
 
 		int fp = lseek(fd, 0, SEEK_END);
 		int no_of_airplanes = fp / sizeof(struct airplane);
-		printf("no of airplane:%d\n", no_of_airplanes);
+		//printf("no of airplane:%d\n", no_of_airplanes);
 		write(sock, &no_of_airplanes, sizeof(int));
 		lseek(fd, 0, SEEK_SET);
 		struct airplane temp;
 		while (fp != lseek(fd, 0, SEEK_CUR))
 		{
-			printf("FP :%d  FD :%ld\n", fp, lseek(fd, 0, SEEK_CUR));
+			//printf("FP :%d  FD :%ld\n", fp, lseek(fd, 0, SEEK_CUR));
 			read(fd, &temp, sizeof(struct airplane));
 			write(sock, &temp.tid, sizeof(int));
 			write(sock, &temp.airplane_name, sizeof(temp.airplane_name));
 			write(sock, &temp.airplane_no, sizeof(int));
-			write(sock, &temp.departure, sizeof(temp.departure));
-			write(sock, &temp.arrival, sizeof(temp.arrival));
-			write(sock, &temp.price, sizeof(int));
-			write(sock, &temp.date, sizeof(temp.date));
-			write(sock, &temp.boarding_time, sizeof(temp.boarding_time));
+			//write(sock, &temp.departure, sizeof(temp.departure));
+			//write(sock, &temp.arrival, sizeof(temp.arrival));
+			//write(sock, &temp.price, sizeof(int));
+			//write(sock, &temp.date, sizeof(temp.date));
+			//write(sock, &temp.boarding_time, sizeof(temp.boarding_time));
 		}
 		// int airplane_id=-1;
 		read(sock, &no_of_airplanes, sizeof(int));

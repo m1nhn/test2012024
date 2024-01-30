@@ -284,17 +284,18 @@ int menu2(int sock, int type)
 
 int do_admin_action(int sock, int opt)
 {
+
 	switch (opt)
 	{
 	case 1:
 	{
 		int tno;
+		char logtime[300];
 		char tname[20];
 		char departure[50];
 		char arrival[50];
 		char date[11];
 		char boarding_time[7];
-		char logtime[300];
 		int price;
 		write(sock, &opt, sizeof(opt));
 		printf("Enter Airplane Name : ");
@@ -320,9 +321,6 @@ int do_admin_action(int sock, int opt)
 		write(sock, &date, sizeof(date));
 		write(sock, &boarding_time, sizeof(boarding_time));
 
-		// sprintf(logtime, "Admin with ID %d has added a new airplane with the following details: Airplane Name: %s, Airplane No.: %d, Departure: %s, Arrival: %s, Price: %d, Date: %s, and Boarding Time: %s", global_id, tname, tno, departure, arrival, price, date, boarding_time);
-		// logEvent(logtime);
-
 		read(sock, &opt, sizeof(opt));
 		if (opt == 1){
 			printf("Airplane Added Successfully.\n");
@@ -339,9 +337,9 @@ int do_admin_action(int sock, int opt)
 	case 2:
 	{
 		int no_of_airplanes;
+		char logtime[300];
 		write(sock, &opt, sizeof(opt));
 		read(sock, &no_of_airplanes, sizeof(int));
-		// printf("no of airplane:%d",no_of_airplanes);
 		while (no_of_airplanes > 0)
 		{
 			int tid, tno;
@@ -355,7 +353,8 @@ int do_admin_action(int sock, int opt)
 		}
 		printf("Enter -2 to cancel.\nEnter the airplane ID to delete: ");
 		scanf("%d", &no_of_airplanes);
-		// printf("no of airplane:%d",no_of_airplanes);
+		sprintf(logtime, "Admin with id %d has deleted airplane ID %d", global_id, no_of_airplanes);
+		logEvent(logtime);
 		write(sock, &no_of_airplanes, sizeof(int));
 		read(sock, &opt, sizeof(opt));
 		if (opt != -2)
@@ -370,13 +369,11 @@ int do_admin_action(int sock, int opt)
 	}
 	case 3:
 	{
-		//int opt2 = 3;
 		int no_of_airplanes;
 		write(sock, &opt, sizeof(opt));
-		//printf("Test %d\n", opt);
-		//475 server - 341 client
 		read(sock, &no_of_airplanes, sizeof(int));
 		printf("Test: %d\n", no_of_airplanes);
+		char logtime[300];
 		while (no_of_airplanes > 0)
 		{
 			int tid, tno;
@@ -393,6 +390,8 @@ int do_admin_action(int sock, int opt)
 		printf("Enter 0 to cancel.\nEnter the airplane ID to modify: ");
 		scanf("%d", &no_of_airplanes);
 		write(sock, &no_of_airplanes, sizeof(int));
+		sprintf(logtime, "Admin with id %d has choosen airplane ID %d to modify", global_id, no_of_airplanes);
+		logEvent(logtime);
 		printf("What parameter do you want to modify?\n1. Airplane Name\n2. Airplane No.\n3. Available Seats\n");
 		printf("Your Choice: ");
 		scanf("%d", &no_of_airplanes);
