@@ -307,3 +307,23 @@
 [2024-01-30 10:01:55] Admin with id 9 chooses to modify airplane
 [2024-01-30 10:01:59] Admin with id 9 has choosen airplane ID 3 to modify
 [2024-01-30 10:02:00] Admin with id 9 has chooses airplane ID 3 to update it seats
+[2024-01-30 11:44:15] Data Sent to Server: Type: Admin, Account Number: 9, Password: 1
+[2024-01-30 11:44:15] Data Received from Server: Valid Login 1
+[2024-01-30 11:44:31] Admin with id 9 chooses to modify airplane
+[2024-01-30 11:44:33] Admin with id 9 has chosen airplane ID 3 to modify
+[2024-01-30 11:44:35] Admin with id 9 has chosen airplane ID 3 to update its seats
+[2024-01-30 11:44:46] Admin with id 9 has updated seats from 185 to 275
+[2024-01-30 11:45:40] Data Sent to Server: Type: Admin, Account Number: 9, Password: 1
+[2024-01-30 11:45:40] Data Received from Server: Valid Login 1
+[2024-01-30 11:45:45] Admin with id 9 chooses to modify airplane
+[2024-01-30 11:45:47] Admin with id 9 has chosen airplane ID 5 to modify
+[2024-01-30 11:45:48] Admin with id 9 has chosen airplane ID 3 to update its seats
+[2024-01-30 11:45:53] Admin with id 9 has updated seats of airplane ID 3 from 185 to 295
+[2024-01-30 11:45:56] Admin with id 9 chooses to log out
+[2024-01-30 11:46:06] Data Sent to Server: Type: Customer, Account Number: 18, Password: 1
+[2024-01-30 11:46:06] Data Received from Server: Valid Login 0
+[2024-01-30 11:46:12] User registered: Type: Customer, Name: 1, Password: 1
+[2024-01-30 11:46:12] Account created: Account Number 18
+[2024-01-30 11:46:16] Data Sent to Server: Type: Customer, Account Number: 18, Password: 1
+[2024-01-30 11:46:16] Data Received from Server: Valid Login 1
+[2024-01-30 11:46:18] Client/Agent with id 18 chooses book ticket

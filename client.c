@@ -405,10 +405,13 @@ int do_admin_action(int sock, int opt)
 			read(sock, &current_value, sizeof(int));
 			printf("Current Value: %d\n", current_value);
 			printf("Enter the number of seats you want to update: ");
+
 			// /int current_value2 = 0;
 			scanf("%d", &current_value_2);
 			//scanf("%d", current_value2);
 			write(sock, &current_value_2, sizeof(int));
+			sprintf(logtime, "Admin with id %d has updated seats of airplane ID %d from %d to %d", global_id, no_of_airplanes ,current_value, current_value_2);
+			logEvent(logtime);
 		} else if (no_of_airplanes == 2){
 			read(sock, &no_of_airplanes, sizeof(no_of_airplanes));
 			int current_value;
