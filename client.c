@@ -390,7 +390,7 @@ int do_admin_action(int sock, int opt)
 		printf("Enter 0 to cancel.\nEnter the airplane ID to modify: ");
 		scanf("%d", &no_of_airplanes);
 		write(sock, &no_of_airplanes, sizeof(int));
-		sprintf(logtime, "Admin with id %d has choosen airplane ID %d to modify", global_id, no_of_airplanes);
+		sprintf(logtime, "Admin with id %d has chosen airplane ID %d to modify", global_id, no_of_airplanes);
 		logEvent(logtime);
 		printf("What parameter do you want to modify?\n1. Airplane Name\n2. Airplane No.\n3. Available Seats\n");
 		printf("Your Choice: ");
@@ -400,12 +400,9 @@ int do_admin_action(int sock, int opt)
 		int current_value = 0, current_value_2 = 0;
 		if (no_of_airplanes == 3)
 		{
+			sprintf(logtime, "Admin with id %d has chosen airplane ID %d to update its seats", global_id, no_of_airplanes);
+			logEvent(logtime);
 			read(sock, &current_value, sizeof(int));
-			//int current_value = 0;
-			// if((read(sock, &current_value, sizeof(current_value)) == -1)){
-			// 	perror("Read failed");
-            // 	exit(EXIT_FAILURE);
-			// }
 			printf("Current Value: %d\n", current_value);
 			printf("Enter the number of seats you want to update: ");
 			// /int current_value2 = 0;

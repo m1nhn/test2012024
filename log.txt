@@ -302,3 +302,8 @@
 [2024-01-30 09:42:36] Data Received from Server: Valid Login 1
 [2024-01-30 09:42:37] Admin with id 9 chooses to modify airplane
 [2024-01-30 09:42:40] Admin with id 9 has choosen airplane ID 3 to modify
+[2024-01-30 10:01:54] Data Sent to Server: Type: Admin, Account Number: 9, Password: 1
+[2024-01-30 10:01:54] Data Received from Server: Valid Login 1
+[2024-01-30 10:01:55] Admin with id 9 chooses to modify airplane
+[2024-01-30 10:01:59] Admin with id 9 has choosen airplane ID 3 to modify
+[2024-01-30 10:02:00] Admin with id 9 has chooses airplane ID 3 to update it seats
