@@ -396,10 +396,11 @@ int do_admin_action(int sock, int opt)
 		printf("Your Choice: ");
 		scanf("%d", &no_of_airplanes);
 		write(sock, &no_of_airplanes, sizeof(int));
-		printf("Your choice has been sent: %d\n", no_of_airplanes);
-		int current_value = 0, current_value_2 = 0;
+		//printf("Your choice has been sent: %d\n", no_of_airplanes);
+		//int current_value = 0, current_value_2 = 0;
 		if (no_of_airplanes == 3)
 		{
+			int current_value = 0, current_value_2 = 0;
 			sprintf(logtime, "Admin with id %d has chosen airplane ID %d to update its seats", global_id, no_of_airplanes);
 			logEvent(logtime);
 			read(sock, &current_value, sizeof(int));
@@ -413,13 +414,14 @@ int do_admin_action(int sock, int opt)
 			sprintf(logtime, "Admin with id %d has updated seats of airplane ID %d from %d to %d", global_id, no_of_airplanes ,current_value, current_value_2);
 			logEvent(logtime);
 		} else if (no_of_airplanes == 2){
-			read(sock, &no_of_airplanes, sizeof(no_of_airplanes));
-			int current_value;
+			int current_value = 0, update_value = 0;
 			read(sock, &current_value, sizeof(current_value));
 			printf("Current Value: %d\n", current_value);
 			printf("Enter Value: ");
-			scanf("%d", &no_of_airplanes);
-			write(sock, &no_of_airplanes, sizeof(int));
+			scanf("%d", &update_value);
+			write(sock, &update_value, sizeof(int));
+			sprintf(logtime, "Admin with id %d has updated number of airplane ID %d from %d to %d", global_id, no_of_airplanes, current_value, update_value);
+			logEvent(logtime);
 		}
 		else
 		{

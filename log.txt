@@ -327,3 +327,43 @@
 [2024-01-30 11:46:16] Data Sent to Server: Type: Customer, Account Number: 18, Password: 1
 [2024-01-30 11:46:16] Data Received from Server: Valid Login 1
 [2024-01-30 11:46:18] Client/Agent with id 18 chooses book ticket
+[2024-01-30 14:12:36] Data Sent to Server: Type: Customer, Account Number: 18, Password: 1
+[2024-01-30 14:12:36] Data Received from Server: Valid Login 1
+[2024-01-30 14:12:38] Client/Agent with id 18 logs out
+[2024-01-30 14:12:43] Data Sent to Server: Type: Admin, Account Number: 8, Password: 1
+[2024-01-30 14:12:43] Data Received from Server: Valid Login 0
+[2024-01-30 14:12:48] Data Sent to Server: Type: Customer, Account Number: 9, Password: 1
+[2024-01-30 14:12:48] Data Received from Server: Valid Login 0
+[2024-01-30 14:12:53] Data Sent to Server: Type: Admin, Account Number: 9, Password: 1
+[2024-01-30 14:12:53] Data Received from Server: Valid Login 1
+[2024-01-30 14:12:55] Admin with id 9 chooses to modify airplane
+[2024-01-30 14:12:59] Admin with id 9 has chosen airplane ID 3 to modify
+[2024-01-30 14:15:48] Data Sent to Server: Type: Admin, Account Number: 9, Password: 1
+[2024-01-30 14:15:48] Data Received from Server: Valid Login 1
+[2024-01-30 14:15:50] Admin with id 9 chooses to modify airplane
+[2024-01-30 14:15:58] Admin with id 9 has chosen airplane ID 3 to modify
+[2024-01-30 14:44:23] Data Sent to Server: Type: Admin, Account Number: 9, Password: 1
+[2024-01-30 14:44:23] Data Received from Server: Valid Login 1
+[2024-01-30 14:44:24] Admin with id 9 chooses to modify airplane
+[2024-01-30 14:44:26] Admin with id 9 has chosen airplane ID 1 to modify
+[2024-01-30 14:46:33] Data Sent to Server: Type: Admin, Account Number: 9, Password: 1
+[2024-01-30 14:46:33] Data Received from Server: Valid Login 1
+[2024-01-30 14:46:33] Admin with id 9 chooses to modify airplane
+[2024-01-30 14:46:35] Admin with id 9 has chosen airplane ID 1 to modify
+[2024-01-30 14:49:12] Data Sent to Server: Type: Admin, Account Number: 9, Password: 1
+[2024-01-30 14:49:12] Data Received from Server: Valid Login 1
+[2024-01-30 14:49:13] Admin with id 9 chooses to modify airplane
+[2024-01-30 14:49:15] Admin with id 9 has chosen airplane ID 1 to modify
+[2024-01-30 14:50:55] Data Sent to Server: Type: Admin, Account Number: 9, Password: 1
+[2024-01-30 14:50:55] Data Received from Server: Valid Login 1
+[2024-01-30 14:50:56] Admin with id 9 chooses to modify airplane
+[2024-01-30 14:50:56] Admin with id 9 has chosen airplane ID 1 to modify
+[2024-01-30 14:51:56] Data Sent to Server: Type: Admin, Account Number: 9, Password: 1
+[2024-01-30 14:51:56] Data Received from Server: Valid Login 1
+[2024-01-30 14:51:57] Admin with id 9 chooses to modify airplane
+[2024-01-30 14:51:58] Admin with id 9 has chosen airplane ID 1 to modify
+[2024-01-30 14:52:51] Data Sent to Server: Type: Admin, Account Number: 9, Password: 1
+[2024-01-30 14:52:51] Data Received from Server: Valid Login 1
+[2024-01-30 14:52:52] Admin with id 9 chooses to modify airplane
+[2024-01-30 14:52:54] Admin with id 9 has chosen airplane ID 1 to modify
+[2024-01-30 14:52:57] Admin with id 9 has updated number of airplane ID 2 from 18 to 19
