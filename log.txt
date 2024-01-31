@@ -410,3 +410,5 @@
 [2024-01-31 11:41:34] Data Sent to Server: Type: Customer, Account Number: 19, Password: 1
 [2024-01-31 11:41:34] Data Received from Server: Valid Login 1
 [2024-01-31 11:41:35] Client/Agent with id 19 chooses book ticket
+[2024-01-31 14:46:38] Data Sent to Server: Type: Customer, Account Number: 19, Password: 1
+[2024-01-31 14:46:38] Data Received from Server: Valid Login 1
