@@ -554,7 +554,7 @@ int do_action(int sock, int opt)
 		//Check sign from server
 		int recv_failure;
 		read(sock, &recv_failure, sizeof(int));
-		printf("Fuckkkk failure: %d\n", recv_failure);
+		//printf("Fuckkkk failure: %d\n", recv_failure);
 		if(recv_failure == 0){
 			printf("Flight has already departed. Please choose another flight\n");
 			while(getchar() != '\n');
