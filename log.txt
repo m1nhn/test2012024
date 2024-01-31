@@ -371,3 +371,32 @@
 [2024-01-30 15:06:40] Data Received from Server: Valid Login 1
 [2024-01-30 15:06:41] Admin with id 9 chooses to modify airplane
 [2024-01-30 15:06:44] Admin with id 9 has chosen airplane ID 1 to modify
+[2024-01-31 08:20:36] Data Sent to Server: Type: Customer, Account Number: 18, Password: 1
+[2024-01-31 08:20:36] Data Received from Server: Valid Login 1
+[2024-01-31 08:20:37] Client/Agent with id 18 chooses book ticket
+[2024-01-31 08:22:18] Data Sent to Server: Type: Customer, Account Number: 18, Password: 1
+[2024-01-31 08:22:18] Data Received from Server: Valid Login 1
+[2024-01-31 08:22:20] Client/Agent with id 18 chooses book ticket
+[2024-01-31 08:22:29] Client/Agent with id 18 chooses book ticket
+[2024-01-31 08:23:03] Data Sent to Server: Type: Customer, Account Number: 18, Password: 1
+[2024-01-31 08:23:03] Data Received from Server: Valid Login 1
+[2024-01-31 08:23:03] Client/Agent with id 18 chooses book ticket
+[2024-01-31 08:23:57] Data Sent to Server: Type: Customer, Account Number: 18, Password: 1
+[2024-01-31 08:23:57] Data Received from Server: Valid Login 1
+[2024-01-31 08:23:57] Client/Agent with id 18 chooses book ticket
+[2024-01-31 08:25:03] Data Sent to Server: Type: Customer, Account Number: 18, Password: 1
+[2024-01-31 08:25:03] Data Received from Server: Valid Login 1
+[2024-01-31 08:25:03] Client/Agent with id 18 chooses book ticket
+[2024-01-31 08:29:15] Data Sent to Server: Type: Customer, Account Number: 18, Password: 1
+[2024-01-31 08:29:15] Data Received from Server: Valid Login 1
+[2024-01-31 08:29:16] Client/Agent with id 18 chooses book ticket
+[2024-01-31 08:32:29] Data Sent to Server: Type: Customer, Account Number: 18, Password: 1
+[2024-01-31 08:32:29] Data Received from Server: Valid Login 1
+[2024-01-31 08:32:30] Client/Agent with id 18 chooses book ticket
+[2024-01-31 08:34:28] Data Sent to Server: Type: Customer, Account Number: 18, Password: 1
+[2024-01-31 08:34:28] Data Received from Server: Valid Login 1
+[2024-01-31 08:34:29] Client/Agent with id 18 chooses book ticket
+[2024-01-31 08:34:43] Client/Agent with id 18 chooses book ticket
+[2024-01-31 08:35:37] Data Sent to Server: Type: Customer, Account Number: 18, Password: 1
+[2024-01-31 08:35:37] Data Received from Server: Valid Login 1
+[2024-01-31 08:35:38] Client/Agent with id 18 chooses book ticket

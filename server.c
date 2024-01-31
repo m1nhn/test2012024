@@ -697,15 +697,15 @@ int menu1(int sock, int id, int type)
 		boarding_tm.tm_mday = boarding_date_tm.tm_mday;
 
 		time_t boarding_time = mktime(&boarding_tm);
-		int failure = 1;
+		int failure = 0, final_failure = 1;
 		if (current_time > boarding_time){
-				failure = 0;
+				final_failure = 0;
 				printf("Flight has already departed. Please choose another flight.\n");
-				write(sock, &failure, sizeof(int));
-				sleep(2);
 				close(fd);
-				return 1;
-		} else {
+				return final_failure;
+		} 
+		write(sock, &final_failure, sizeof(int));
+		if (final_failure != 0) {
 		write(sock, &temp.av_seats, sizeof(int));
 		// printf("Seatssss: %d\n", temp.av_seats);
 		// printf("Boarding timeeeee: %s\n", temp.boarding_time);
