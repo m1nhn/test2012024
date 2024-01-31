@@ -403,3 +403,10 @@
 [2024-01-31 09:42:58] Data Sent to Server: Type: Customer, Account Number: 18, Password: 1
 [2024-01-31 09:42:58] Data Received from Server: Valid Login 1
 [2024-01-31 09:42:59] Client/Agent with id 18 chooses book ticket
+[2024-01-31 11:41:24] Data Sent to Server: Type: Customer, Account Number: 19, Password: 1
+[2024-01-31 11:41:24] Data Received from Server: Valid Login 0
+[2024-01-31 11:41:30] User registered: Type: Customer, Name: minh, Password: 1
+[2024-01-31 11:41:30] Account created: Account Number 19
+[2024-01-31 11:41:34] Data Sent to Server: Type: Customer, Account Number: 19, Password: 1
+[2024-01-31 11:41:34] Data Received from Server: Valid Login 1
+[2024-01-31 11:41:35] Client/Agent with id 19 chooses book ticket
